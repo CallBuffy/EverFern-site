@@ -806,8 +806,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   const hb=document.querySelector('.hamburger'),nl=document.getElementById('nav-links');
   hb.addEventListener('click',()=>{const o=nl.classList.toggle('open');hb.setAttribute('aria-expanded',o)});
   nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');hb.setAttribute('aria-expanded','false')}));
-  // Contact form: sends to hello@everfernsolutions.com through FormSubmit.co
-  // The first submission triggers a one-time activation email to that inbox.
+  // Contact form: sends to hello@everfernsolutions.com through Web3Forms
   const form=document.getElementById('contact-form'),status=document.getElementById('form-status');
   form.addEventListener('submit',async e=>{
     e.preventDefault();
@@ -818,8 +817,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     const btn=form.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='Sending…';
     try{
       const data=Object.fromEntries(new FormData(form).entries());
-      const res=await fetch('https://formsubmit.co/ajax/hello@everfernsolutions.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
-      if(!res.ok) throw new Error();
+      data.access_key='16fc7222-ab26-4397-af46-73d718e5efb6';data.subject='New EverFern website inquiry';data.from_name='EverFern Website';
+      const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
+      let j={};try{j=await res.json()}catch(_){}
+      if(!res.ok||j.success!==true){console.warn('Web3Forms:',res.status,j.message);throw new Error(j.message||'send failed')}
       status.textContent="Thank you. We'll be in touch within one business day.";status.style.color='';form.reset();
     }catch(err){
       status.textContent='Something went wrong. Please call 206-659-9790 or email hello@everfernsolutions.com.';status.style.color='#a33';
