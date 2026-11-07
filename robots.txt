@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://everfernsolutions.com/sitemap.xml
