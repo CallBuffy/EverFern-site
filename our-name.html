@@ -44,7 +44,7 @@ section{padding:100px 56px}
 .bg-cream{background:var(--warm-white)}
 .bg-sand{background:var(--cream)}
 
-.eyebrow{font-size:14.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.eyebrow{font-size:17px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:12px}
 .eyebrow::before{content:'';width:28px;height:2px;background:var(--gold)}
 h2{font-family:'Source Serif 4',serif;font-size:clamp(30px,3.2vw,42px);font-weight:600;line-height:1.15;letter-spacing:-.015em;color:var(--ink);margin-bottom:18px}
 .lede{font-size:17.5px;color:var(--mid);max-width:700px;line-height:1.7}
@@ -320,7 +320,7 @@ p,li{text-wrap:pretty}
 
 /* Simple story layout (draft) */
 .sv{max-width:680px;margin:0 auto;padding:88px 24px 72px}
-.sv-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:14px}
+.sv-eyebrow{font-size:17px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:14px}
 .sv h1{font-family:'Source Serif 4',serif;font-size:clamp(38px,5vw,54px);font-weight:600;line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:20px}
 .sv h1 em{color:var(--green)}
 .sv p{font-size:18.5px;line-height:1.75;color:var(--text);margin-bottom:22px}
@@ -358,7 +358,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .svc-detail .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}
 .svc-detail h2{margin-bottom:14px}
 .svc-detail .intro{font-size:17px;color:var(--mid);margin-bottom:22px}
-.svc-detail .tag{display:inline-block;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold-text);margin-bottom:12px}
+.svc-detail .tag{display:inline-block;font-size:16px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold-text);margin-bottom:12px}
 .box{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:28px 30px;margin-bottom:18px}
 .box h3{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:12px}
 .box ul{list-style:none}
@@ -439,10 +439,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .st-community{background:var(--warm-white);border-top:1px solid #e3ddd2;padding:80px 24px}
 .st-comm-in{max-width:1080px;margin:0 auto}
 .st-comm-head{text-align:center;max-width:680px;margin:0 auto 44px}
-.st-comm-eyebrow{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.st-comm-eyebrow{font-size:17px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
 .st-comm-head h2{font-family:'Source Serif 4',serif;font-weight:600;font-size:clamp(28px,3.2vw,38px);line-height:1.2;color:var(--ink);margin-bottom:12px}
 .st-comm-head p{font-size:17px;color:var(--mid)}
-.st-comm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.st-comm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media(max-width:1100px){.st-comm-grid{grid-template-columns:repeat(2,1fr)}}
+.st-comm-name{font-family:'Source Serif 4',serif;font-size:22px;font-weight:700;color:#5b2c83;line-height:1.15}
 .st-comm-card{background:#fff;border:1px solid #e3ddd2;border-top:3px solid var(--green);border-radius:4px;padding:30px 28px;text-align:center}
 .st-comm-logo{height:110px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
 .st .st-comm-logo img{max-height:70px;max-width:100%;width:auto;background:none}
@@ -543,6 +545,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="st-comm-logo"><img loading="lazy" decoding="async" src="logo-cows-for-cambodia.svg" alt="Cows for Cambodia" style="max-height:92px"></div>
         <h3>Cows for Cambodia</h3>
         <p>A cause close to our team's hearts and families. We proudly support this "cow bank," which loans pregnant cows to families in rural Cambodia. Each family keeps the calf, a hand up that helps break the cycle of poverty.</p>
+      </div>
+      <div class="st-comm-card">
+        <div class="st-comm-logo"><span class="st-comm-name">Relay For Life</span></div>
+        <h3>Relay For Life</h3>
+        <p>We support the American Cancer Society's Relay For Life, which raises funds for cancer research and support for patients and families.</p>
       </div>
     </div>
   </div>
